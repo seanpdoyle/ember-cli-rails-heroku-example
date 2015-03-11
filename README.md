@@ -37,10 +37,14 @@ gem "rails_12factor", group: :production
 
 ```json
 {
+  "devDependencies": {
+    "bower": "*",
+    ...
+  }
   ...
   "scripts": {
     ...
-    "postinstall": "../../node_modules/bower/bin/bower install"
+    "postinstall": "node_modules/.bin/bower install"
   }
 }
 ```
@@ -50,9 +54,7 @@ gem "rails_12factor", group: :production
 
 ```json
 {
-  "dependencies": {
-    "bower": "*"
-  }
+  "cache_directories": ["frontend/node_modules", "frontend/bower_components"]
 }
 ```
 
