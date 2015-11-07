@@ -16,3 +16,5 @@
 !/log/.keep
 /tmp
 node_modules/
+public/assets/
+public/_apps/

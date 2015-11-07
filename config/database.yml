@@ -6,6 +6,7 @@
 #
 default: &default
   adapter: postgresql
+  database: ember-cli-rails-heroku-example
   encoding: unicode
   pool: 5
   timeout: 5000

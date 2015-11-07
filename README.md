@@ -1,67 +1,31 @@
 Deploying an ember-cli-rails App to Heroku
 ==========================================
 
-For all changes, view this [commit diff][sha]
-
-* Follow [ember-cli-rails](https://github.com/rwz/ember-cli-rails#readme) installation instructions
+* Follow [ember-cli-rails][heroku] installation instructions
 * Create your applicaiton on Heroku:
 
 ```bash
 $ heroku create $MY_EMBER_CLI_RAILS_APP
 ```
 
+To configure your Ember CLI Rails app to be ready to deploy on Heroku:
 
-* Tell Heroku that your app requires composing Multiple Build Packs
+1. Run `rails g ember-cli:heroku` generator
+1. [Add the NodeJS buildpack][buildpack] and configure NPM to include the
+   `bower` dependency's executable file.
 
-```bash
-$ heroku config:add BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-multi.git
+```sh
+$ heroku buildpacks:clear
+$ heroku buildpacks:add --index 1 https://github.com/heroku/heroku-buildpack-nodejs
+$ heroku buildpacks:add --index 2 https://github.com/heroku/heroku-buildpack-ruby
+$ heroku config:set NPM_CONFIG_PRODUCTION=false
+$ heroku config:unset SKIP_EMBER
 ```
 
-* Check in `.buildpacks` to specify which buildpacks to use
+You should be ready to deploy.
 
-```
-https://github.com/heroku/heroku-buildpack-nodejs.git#v68
-https://github.com/heroku/heroku-buildpack-ruby.git#v129
-```
+**NOTE** Run the generator each time you introduce additional EmberCLI
+applications into the project.
 
-* Add `rails_12factor` to your `production` group in `Gemfile`, then run `bundle install`
-
-```ruby
-gem "rails_12factor", group: :production
-```
-
-
-* Add a `postinstall` task to your `ember-cli` app's `package.json`. This will
-  ensure that during the deployment process, Heroku will all dependencies found
-  in both `node_modules` and `bower_components`.
-
-```json
-{
-  "devDependencies": {
-    "bower": "*",
-    ...
-  }
-  ...
-  "scripts": {
-    ...
-    "postinstall": "node_modules/.bin/bower install"
-  }
-}
-```
-
-* Add a `package.json` to the root of your Rails project. This will be detected
-  by the `nodejs` buildpack.
-
-```json
-{
-  "cache_directories": ["frontend/node_modules", "frontend/bower_components"]
-}
-```
-
-* Finally, deploy:
-
-```bash
-$ git push heroku master
-```
-
-[sha]: https://github.com/seanpdoyle/ember-cli-rails-heroku-example/commit/9bc829fc7a061dee879a2cf9b95e9f2b3ee92ec3
+[heroku]: https://github.com/thoughtbot/ember-cli-rails#heroku
+[buildpack]: https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app#adding-a-buildpack
