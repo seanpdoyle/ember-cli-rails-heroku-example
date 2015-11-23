@@ -1,0 +1,2 @@
+class HelperTagsController < ApplicationController
+end
