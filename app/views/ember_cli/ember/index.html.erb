@@ -1,0 +1,8 @@
+<%= render_ember_app ember_app do |head| %>
+  <% head.append do %>
+    <style>
+    * { color: red; }
+    </style>
+    <%= csrf_meta_tags %>
+  <% end %>
+<% end %>
