@@ -1,9 +1,11 @@
 GIT
   remote: git://github.com/thoughtbot/ember-cli-rails.git
-  revision: c8c1fd17a77aa2314a7d744d6252ffce7f123c27
+  revision: 29e674558cc643fe9641624f91006451afad7aae
   specs:
     ember-cli-rails (0.6.0)
       cocaine (~> 0.5.8)
+      ember-cli-rails-assets (>= 0.6.1)
+      html_page (~> 0.1.0)
       railties (>= 3.2, < 5)
 
 GEM
@@ -66,11 +68,13 @@ GEM
     columnize (0.9.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    ember-cli-rails-assets (0.6.1)
     erubis (2.7.0)
     execjs (2.2.2)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
+    html_page (0.1.0)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -88,7 +92,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.10.1)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.1)
     rack (1.6.4)
