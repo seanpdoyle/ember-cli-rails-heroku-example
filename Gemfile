@@ -30,7 +30,8 @@ gem 'ember-cli-rails', github: 'thoughtbot/ember-cli-rails'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
