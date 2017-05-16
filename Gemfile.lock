@@ -82,10 +82,13 @@ GEM
     ember-cli-rails-assets (0.6.2)
     erubis (2.7.0)
     execjs (2.2.2)
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
     html_page (0.1.0)
+    httpclient (2.8.3)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -103,8 +106,15 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    percy-capybara (2.5.1)
+      percy-client (~> 1.10)
+    percy-client (1.11.0)
+      addressable
+      faraday (>= 0.9)
+      httpclient (>= 2.6)
     pg (0.18.1)
     poltergeist (1.15.0)
       capybara (~> 2.1)
@@ -214,6 +224,7 @@ DEPENDENCIES
   ember-cli-rails!
   jbuilder (~> 2.0)
   jquery-rails
+  percy-capybara
   pg
   poltergeist
   rails (= 4.2.0)

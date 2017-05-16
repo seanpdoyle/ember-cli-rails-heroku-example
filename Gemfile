@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'percy-capybara'
 end
 
 gem 'rails_12factor', group: [:staging, :production]
