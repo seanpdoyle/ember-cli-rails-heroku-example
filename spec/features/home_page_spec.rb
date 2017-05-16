@@ -1,6 +1,8 @@
+require 'rails_helper'
+
 describe 'the home page', type: :feature, js: true do
   it 'loads the home page' do
-    visit '/'
+    visit '/' # this loads the ember app
     expect(page).to have_content 'Welcome'
   end
 end
