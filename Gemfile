@@ -47,7 +47,7 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
 end
 
 gem 'rails_12factor', group: [:staging, :production]
