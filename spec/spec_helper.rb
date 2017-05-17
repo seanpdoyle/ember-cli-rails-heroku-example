@@ -101,6 +101,14 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
-  config.before(:suite) { Percy::Capybara.initialize_build }
+  config.before(:suite) do
+    EmberCli.compile!
+
+    ember_apps = { frontend: '/', admin: '/admin/' }
+    Percy::Capybara.use_loader(:ember_cli_rails, { mounted_apps: ember_apps})
+
+    Percy::Capybara.initialize_build
+  end
+
   config.after(:suite) { Percy::Capybara.finalize_build }
 end
