@@ -1,8 +1,9 @@
 GIT
   remote: git://github.com/thoughtbot/ember-cli-rails.git
-  revision: 85600ba7d4dc16c873148ef345a7f9069fe9f4ec
+  revision: 2a53085f981bad91fcc2e45949c2140e613f88f0
+  branch: install-with-rake
   specs:
-    ember-cli-rails (0.8.3)
+    ember-cli-rails (0.9.0)
       cocaine (~> 0.5.8)
       ember-cli-rails-assets (~> 0.6.2)
       html_page (~> 0.1.0)
@@ -54,8 +55,7 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
+    climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.0)
@@ -185,5 +185,8 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
+RUBY VERSION
+   ruby 2.2.3p173
+
 BUNDLED WITH
-   1.11.2
+   1.13.7

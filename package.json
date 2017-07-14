@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "postinstall": "./bin/heroku_install"
+    "postinstall": "bundle exec rake ember:install"
   },
   "dependencies": {
     "bower": "*"
@@ -8,6 +8,8 @@
   "cacheDirectories": [
     "frontend/node_modules",
     "frontend/bower_components",
+    "admin/node_modules",
+    "admin/bower_components",
     "node_modules"
   ]
 }
