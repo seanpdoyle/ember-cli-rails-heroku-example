@@ -1,7 +1,4 @@
 {
-  "scripts": {
-    "postinstall": "bundle exec rake ember:install"
-  },
   "dependencies": {
     "bower": "*"
   },
